@@ -25,6 +25,9 @@ public class Neighbour {
     /** About me */
     private String aboutMe;
 
+    // favoris
+    private boolean isFav;
+
     /**
      * Constructor
      * @param id
@@ -39,6 +42,10 @@ public class Neighbour {
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.aboutMe = aboutMe;
+    }
+
+    public void changeName(String text) {
+        name = text;
     }
 
     public long getId() {
@@ -101,4 +108,7 @@ public class Neighbour {
     public int hashCode() {
         return Objects.hash(id);
     }
-}
+
+    }
+
+

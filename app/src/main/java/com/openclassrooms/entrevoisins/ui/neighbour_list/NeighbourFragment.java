@@ -27,6 +27,7 @@ public class NeighbourFragment extends Fragment {
     private NeighbourApiService mApiService;
     private List<Neighbour> mNeighbours;
     private RecyclerView mRecyclerView;
+    private MyNeighbourRecyclerViewAdapter mAdapter;
 
 
     /**
@@ -55,12 +56,21 @@ public class NeighbourFragment extends Fragment {
         return view;
     }
 
+
     /**
      * Init the List of neighbours
      */
     private void initList() {
         mNeighbours = mApiService.getNeighbours();
         mRecyclerView.setAdapter(new MyNeighbourRecyclerViewAdapter(mNeighbours));
+
+        mAdapter.setOnItemClickListener(new MyNeighbourRecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                mNeighbours.get(position).changeName("Clicked");
+            }
+        });
+
     }
 
     @Override
