@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="330dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,20 +23,24 @@
 
     <TextView
         android:id="@+id/name_title"
-        android:layout_width="350dp"
+        android:layout_width="match_parent"
         android:layout_height="33dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="284dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:fontFamily="sans-serif-thin"
         android:text="Name"
         android:textColor="@android:color/white"
         android:textSize="30dp"
         android:textStyle="bold"
+
+        app:layout_constraintBottom_toBottomOf="@+id/fabFavorites"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.9" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fabFavorites"
@@ -56,14 +60,13 @@
         android:id="@+id/cardView2"
         android:layout_width="match_parent"
         android:layout_height="186dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/name_title"
-        app:layout_constraintVertical_bias="0.695">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.7">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
@@ -140,12 +143,15 @@
         android:id="@+id/cardView"
         android:layout_width="match_parent"
         android:layout_height="121dp"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fabFavorites"
+        app:layout_constraintVertical_bias="0.81">
 
         <android.support.constraint.ConstraintLayout
             android:layout_width="match_parent"
