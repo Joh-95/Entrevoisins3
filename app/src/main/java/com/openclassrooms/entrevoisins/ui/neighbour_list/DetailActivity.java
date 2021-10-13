@@ -51,7 +51,6 @@ public class DetailActivity extends AppCompatActivity {
 
     private NeighbourApiService mApiService = DI.getNeighbourApiService();
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,13 +72,13 @@ public class DetailActivity extends AppCompatActivity {
         phoneNumberDetail.setText(neighbour.getPhoneNumber());
         aboutMeDescriptionDetail.setText(neighbour.getAboutMe());
 
-
-
-
-
+        if (neighbour.isFav()) {
+            fabFavorites.setImageResource(R.drawable.ic_star_white_24dp);
+        } else {
+            fabFavorites.setImageResource(R.drawable.ic_star_border_white_24dp);
+        }
 
     fabFavorites.setOnClickListener(new View.OnClickListener()
-
     {
         @Override
         public void onClick (View v){
